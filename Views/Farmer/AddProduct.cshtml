@@ -1,0 +1,32 @@
+﻿@model AgriEnergyConnect.Models.Product
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<h2>Add Product</h2>
+
+<form asp-action="AddProduct" method="post">
+    <div class="form-group">
+        <label asp-for="PoductName" class="control-label"></label>
+        <input asp-for="PoductName" class="form-control" />
+        <span asp-validation-for="PoductName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductDes" class="control-label"></label>
+        <input asp-for="ProductDes" class="form-control" />
+        <span asp-validation-for="ProductDes" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Catergry" class="control-label"></label>
+        <input asp-for="Catergry" class="form-control" />
+        <span asp-validation-for="Catergry" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Profile" asp-route-email="@Model.Farmer.Email">Back to Profile</a>
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AgriEnergyConnect.Models.Farmer>
+
+@{
+    ViewData["Title"] = "View Farmers";
+}
+
+<h2>Farmers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Products</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farmer in Model)
+        {
+            <tr>
+                <td>@farmer.FirstName</td>
+                <td>@farmer.LastName</td>
+                <td>@farmer.Email</td>
+                <td>@farmer.City</td>
+                <td>
+                    <ul>
+                        @foreach (var product in farmer.Products)
+                        {
+                            <li>@product.PoductName - @product.ProductDes</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
